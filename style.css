@@ -1,0 +1,21 @@
+@charset "UTF-8";
+
+
+
+body{
+    background-image: linear-gradient(to left,#729599,#BCC5CE,#E6DFD9,#BFB3A8,#7A7067);
+    color:#2c2825 ;
+    
+}
+
+input{
+    text-align: center;
+    font-size: medium;
+    font-family: 'Times New Roman', Times, serif;
+}
+
+
+
+div{
+    padding: 5px;
+}
