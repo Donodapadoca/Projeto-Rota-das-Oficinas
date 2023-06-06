@@ -3,6 +3,7 @@
 <head>
   <title>Calculadora de Divisão de Conta</title>
   <style>
+   @charset "UTF-8";
     .container {
       max-width: 400px;
       margin: 0 auto;
@@ -43,6 +44,11 @@
         <input type="text" id="customerName1" placeholder="Informe o nome do cliente">
         <label for="customerValue1">Valor Consumido:</label>
         <input type="text" id="customerValue1" placeholder="Informe o valor consumido pelo cliente">
+        <!-- <label for="taxaServico">Qual foi a taxa de serviço</label>
+        <select id="taxa-servico">
+          <option disabled selected value="0">-- Defina a Taxa --</option>
+          <option value="0.0"> Não pagar a Taxa</option>
+          <option value="0.1"> 10% </option> -->
       </div>
     </div>
 
@@ -81,6 +87,13 @@
       customerValueInput.type = 'text';
       customerValueInput.id = 'customerValue' + customerCount;
       customerValueInput.placeholder = 'Informe o valor consumido pelo cliente';
+
+      const costumerTaxaLabel = document.createAttribute('label');
+      costumerTaxaLabel.textContent = 'Taxa de serviço';
+
+
+      const costumerTaxaMenu = document.createElement('option')
+      costumerTaxaLabel.
 
       newCustomer.appendChild(customerTitle);
       newCustomer.appendChild(customerNameLabel);

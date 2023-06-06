@@ -48,7 +48,7 @@
                     
 
                 </select>
-                <button onclick="addCustomer()" id="clientebtt">Adicionar Cliente</button>
+                <button onclick="addcliente()" id="clientebtt">Adicionar Cliente</button>
               </div>
               </div>
               
@@ -77,8 +77,10 @@
 
        function addcliente(){
        costumerCount++;
+
+      
     // salva o container consumidor
-       const costumersContainer = document.getElementById('consumidor')
+       const cContainer = document.getElementById('consumidor')
        
     
        const newc = document.createElement('div');
@@ -86,54 +88,78 @@
 
        
 
-    // // numero de clientes que foram cadastrados
-    //    const cnome = document.createElement('h3');
-    //    cnome.textContent = 'Cliente nº ' + costumerCount;
+    // numero de clientes que foram cadastrados
+       const cnome = document.createElement('h3');
+       cnome.textContent = 'Cliente nº ' + costumerCount;
 
-    //    const comelabel = document.createElement('label');
-    //    cnomelabel.textContent = 'Nome: ';
+       const cnomelabel = document.createElement('p');
+       cnomelabel.textContent = 'Nome: ';
 
-    //    const cnomeimput = document.createElement('input');
-    //    cnomeimput.type = 'text';
-    //    cnomeimput.id = 'costumerName' + costumerCount;
-    //    cnomeimput.placeholder = 'informe o nome do '
+       const cnomeimput = document.createElement('input');
+       cnomeimput.type = 'text';
+       cnomeimput.id = 'costumerName' + costumerCount;
+       cnomeimput.placeholder = 'informe o nome do cliente'
+
+       const cvalorlabel = document.createElement('p');
+       cvalorlabel.textContent = 'Valor consumido'
+
+
+       const cvalorimput = document.createElement('input');
+       cvalorlabel.type = 'text'
+       cvalorlabel.id = 'costumervalue' + costumerCount;
+       cvalorlabel.placeholder = 'Valor consumido pelo cliente';
+
+       
+
+
+
+      newc.appendChild(cnome);
+      newc.appendChild(cnomelabel);
+      newc.appendChild(cnomeimput);
+      newc.appendChild(cvalorlabel);
+      newc.appendChild(cvalorimput);
+
+      cContainer.appendChild(newc);
       }
+      document.getElementById("clientebtt").onclick = function(){
+        addcliente()}
+      
 // 
 
   
-  // document.getElementById("valor-calculado").style.display = "none";
-  //   document.getElementById("each").style.display = "none";
+  document.getElementById("valor-calculado").style.display = "none";
+    document.getElementById("each").style.display = "none";
     
-  //   function calculateDinner(){
-  //       var totalConta = document.getElementById("total-conta").value;
-  //       var taxaServico = document.getElementById("taxa-servico").value;
-  //       var numeroPessoas = document.getElementById("numero-pessoas").value;
+    function calculateDinner(){
+        var vaorcliente = document.getElementById("costumerValue1").value;
+        var taxaServico = document.getElementById("taxa-servico").value;
+        var numeroPessoas = document.getElementById("numero-pessoas").value;
     
-  //       if(totalConta === "" || isNaN(totalConta) || isNaN(numeroPessoas)){
-  //           alert("Por favor, coloque um valor válido!");
-  //           return;
-  //       }
+        if(totalConta === "" || isNaN(totalConta) || isNaN(numeroPessoas)){
+            alert("Por favor, coloque um valor válido!");
+            return;
+        }
     
-  //       if (numeroPessoas === "" || numeroPessoas <= 1){
-  //           numeroPessoas = 1;
-  //           document.getElementById("each").style.display = "none"
-  //       } else {
-  //           document.getElementById("each").style.display = "block"
-  //       }
+        if (numeroPessoas === "" || numeroPessoas <= 1){
+            numeroPessoas = 1;
+            document.getElementById("each").style.display = "none"
+        } else {
+            document.getElementById("each").style.display = "block"
+        }
     
-  //       var totalTaxaServico = (totalConta * taxaServico) / numeroPessoas;
-  //       var total = totalTaxaServico + (totalConta / numeroPessoas);
+        var totalTaxaServico = (valorcliente * taxaServico);
+        var total = totalTaxaServico + (valorcliente / numeroPessoas);
     
-  //       total = Math.round(total * 100) / 100;
-  //       total = total.toFixed(2);
+        total = Math.round(total * 100) / 100;
+        total = total.toFixed(2);
     
-  //       document.getElementById("valor-calculado").style.display = "block";
-  //       document.getElementById("valor-por-cabeca").innerHTML = total;
-  //   }
+        document.getElementById("valor-calculado").style.display = "block";
+        document.getElementById("valor-por-cabeca").innerHTML = total;
+    }
     
-  //   document.getElementById("calcular").onclick = function(){
-  //       calculateDinner();
-  //   }</script>
+    document.getElementById("calcular").onclick = function(){
+        calculateDinner();
+    }</script>
 
     
 </body>

@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Calculadora de Divisão de Conta</title>
+    <link rel="stylesheet" href="style01.css">
+
+  
+  
+</head>
+<body>
+    
+    
+    
+    <div class="container" id="calc">
+        <div id="topo">
+            <h2>Calculadora de Divisão de Conta</h2>
+        </div>
+   <label>Clientes (separados por vírgula):</label>
+  <input type="text" id="clientsInput">
+  <label>Produtos (separados por vírgula):</label>
+  <input type="text" id="productsInput">
+
+  <button onclick="calculate()">Calcular</button>
+</div>
+
+  <div id="results"></div>
+
+  <script>
+    function calculate() {
+      var clientsInput = document.getElementById('clientsInput').value;
+      var productsInput = document.getElementById('productsInput').value;
+
+      var clients = clientsInput.split(',');
+      var products = productsInput.split(',');
+
+      var results = {};
+
+      clients.forEach(function(client) {
+        results[client] = 0;
+      });
+
+      products.forEach(function(product) {
+        var price = parseFloat(prompt('Digite o valor para o produto ' + product + ':'));
+        var consumedBy = prompt('Digite os clientes que consumiram ' + product + ' (separados por vírgula):');
+        var taxabb = prompt('Digite os clientes que vão pagar a taxa de serviço (separados por virgula)' )
+
+        var consumers = consumedBy.split(',');
+        var consumerstx = taxabb.split(',');
+
+        var pricePerConsumer = price / consumers.length;
+
+
+        // cria uma funçao para calcular o preço por cada cliente 
+        consumers.forEach(function(consumer) {
+          results[consumer] += pricePerConsumer;
+        });
+      
+        // cria uma funçao para calcular os 10% dos clientes que quiserem pagar
+      consumerstx.forEach(function(consumer){
+        results[consumer] += pricePerConsumer*0.10;
+
+      });
+
+    //   cria uma tabela que mostra quanto cada cliente pagou, incluindo a taxa de 10% para os que quiserem
+    });
+      var table = document.createElement('table');
+      var thead = document.createElement('thead');
+      var tr = document.createElement('tr');
+      var th1 = document.createElement('th');
+      var th2 = document.createElement('th');
+
+      th1.appendChild(document.createTextNode('Cliente'));
+      th2.appendChild(document.createTextNode('Valor a pagar'));
+
+      tr.appendChild(th1);
+      tr.appendChild(th2);
+      thead.appendChild(tr);
+      table.appendChild(thead);
+
+      var tbody = document.createElement('tbody');
+
+      for (var client in results) {
+        var row = document.createElement('tr');
+        var td1 = document.createElement('td');
+        var td2 = document.createElement('td');
+
+        td1.appendChild(document.createTextNode(client));
+        
+        // exprime na tela o valor que cada cliente pagou
+        var total = results[client];
+    
+
+        td2.appendChild(document.createTextNode('R$ ' + total.toFixed(2)));
+
+        row.appendChild(td1);
+        row.appendChild(td2);
+        tbody.appendChild(row);
+      }
+
+      table.appendChild(tbody);
+
+      var resultsDiv = document.getElementById('results');
+      resultsDiv.innerHTML = '';
+      resultsDiv.appendChild(table);
+    }
+  </script>
+</body>
+</html>
