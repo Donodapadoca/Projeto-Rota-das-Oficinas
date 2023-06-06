@@ -24,6 +24,8 @@
     <input type="text" id="clientsInput">
     <label>Produtos (separados por vírgula):</label>
     <input type="text" id="productsInput">
+    <!-- <label> Quantos clientes vão pagar a taxa</label>
+    <input type="number" id="taxaInput"> -->
 
     <button onclick="calculate()">Calcular</button>
   </div>
@@ -34,7 +36,8 @@
     function calculate() {
       var clientsInput = document.getElementById('clientsInput').value;
       var productsInput = document.getElementById('productsInput').value;
-
+      // const taxaInput = document.getElementById('taxapc').value
+      //separa os clientes e os produtos por uma virgula
       var clients = clientsInput.split(',');
       var products = productsInput.split(',');
 
@@ -45,9 +48,9 @@
       });
 
       products.forEach(function (product) {
+        // identifica os produtos e clientes após o usuario digitar
         var price = parseFloat(prompt('Digite o valor para o produto ' + product + ':'));
         var consumedBy = prompt('Digite os clientes que consumiram ' + product + ' (separados por vírgula):');
-
 
 
         var consumers = consumedBy.split(',');
@@ -57,15 +60,19 @@
         consumers.forEach(function (consumer) {
           results[consumer] += pricePerConsumer;
         });
-
-
         var taxabb = prompt('Digite os clientes que vão pagar a taxa de serviço (separados por virgula)')
+
         var consumerstx = taxabb.split(',');
 
-        consumerstx.forEach(function (consumer) {
+
+
+        consumetaxa.forEach(function (consumerstx) {
           results[consumer] += pricePerConsumer * 0.10;
 
         });
+
+
+
 
 
       });
@@ -73,12 +80,15 @@
 
 
 
+
+
+      // cria as tabelas 
       var table = document.createElement('table');
       var thead = document.createElement('thead');
       var tr = document.createElement('tr');
       var th1 = document.createElement('th');
       var th2 = document.createElement('th');
-
+      //cria o texto de cima das tabelas
       th1.appendChild(document.createTextNode('Cliente'));
       th2.appendChild(document.createTextNode('Valor a pagar'));
 
@@ -99,7 +109,7 @@
         // exprime na tela o valor que cada cliente pagou
         var total = results[client];
 
-
+        // cira uma anotação de texto em formato de tabela e exibe para o usuario
         td2.appendChild(document.createTextNode('R$ ' + total.toFixed(2)));
 
         row.appendChild(td1);
