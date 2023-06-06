@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exercicio 03</title>
+    <link rel="stylesheet" href="style-03.css">
+
+    
+</head>
+<body>
+
+
+
+<div id="container">
+    <div id="topo">
+        <h1>Cálculo do Jantar</h1>
+        
+    </div>
+
+
+    <div id="calculator">  
+      <form>
+        <!-- <p>Quanto custou o jantar?
+          <p> -->
+            <!-- <input id="total-conta" type="text" placeholder=" Informe o valor total da conta"> -->
+
+            <div id="consumidor">
+              <div class="customer">
+                <!-- informa o nome do cliente -->
+                <p>Informe o nome do cliente</p>
+                <input type="text" id="customerName1" placeholder="Nome do cliente">
+                
+                <!-- informa quanto o cliente gastou -->
+                
+                <p>Informe quanto ele(a) gastou</p>
+                <input type="text" id="customerValue1" placeholder="Valor consumido pelo cliente">
+                
+             
+            <!-- escolhe se o cliente quer ou não pagar a taxa de serviço -->
+            <p>Qual a taxa de serviço?
+              <p>
+                <select id="taxa-servico">
+                    <option disabled selected value="0">-- Defina a Taxa --</option>
+                    <option value="0.0"> Não pagar a Taxa</option>
+                    <option value="0.1"> 10% </option>
+                    
+
+                </select>
+                <button onclick="addCustomer()" id="clientebtt">Adicionar Cliente</button>
+              </div>
+              </div>
+              
+  
+      </form>
+
+      <!-- <p>Quantas pessoas vão dividir a conta?</p>
+      <input id="numero-pessoas" type="text" placeholder="Número de pessoas"> pessoas -->
+      
+      <button type="button" id="calcular">Calcular!</button>
+      
+  
+    </div>
+    
+    
+   
+  
+  </div>
+  <!-- mostra o resultado final da conta de todos os clientes somada -->
+  <div id="results"></div>
+
+  <script>
+
+    // adiciona um cliente a cada contagem
+       let costumerCount=1;
+
+       function addcliente(){
+       costumerCount++;
+    // salva o container consumidor
+       const costumersContainer = document.getElementById('consumidor')
+       
+    
+       const newc = document.createElement('div');
+       newcost.className = 'customer';
+
+       
+
+    // // numero de clientes que foram cadastrados
+    //    const cnome = document.createElement('h3');
+    //    cnome.textContent = 'Cliente nº ' + costumerCount;
+
+    //    const comelabel = document.createElement('label');
+    //    cnomelabel.textContent = 'Nome: ';
+
+    //    const cnomeimput = document.createElement('input');
+    //    cnomeimput.type = 'text';
+    //    cnomeimput.id = 'costumerName' + costumerCount;
+    //    cnomeimput.placeholder = 'informe o nome do '
+      }
+// 
+
+  
+  // document.getElementById("valor-calculado").style.display = "none";
+  //   document.getElementById("each").style.display = "none";
+    
+  //   function calculateDinner(){
+  //       var totalConta = document.getElementById("total-conta").value;
+  //       var taxaServico = document.getElementById("taxa-servico").value;
+  //       var numeroPessoas = document.getElementById("numero-pessoas").value;
+    
+  //       if(totalConta === "" || isNaN(totalConta) || isNaN(numeroPessoas)){
+  //           alert("Por favor, coloque um valor válido!");
+  //           return;
+  //       }
+    
+  //       if (numeroPessoas === "" || numeroPessoas <= 1){
+  //           numeroPessoas = 1;
+  //           document.getElementById("each").style.display = "none"
+  //       } else {
+  //           document.getElementById("each").style.display = "block"
+  //       }
+    
+  //       var totalTaxaServico = (totalConta * taxaServico) / numeroPessoas;
+  //       var total = totalTaxaServico + (totalConta / numeroPessoas);
+    
+  //       total = Math.round(total * 100) / 100;
+  //       total = total.toFixed(2);
+    
+  //       document.getElementById("valor-calculado").style.display = "block";
+  //       document.getElementById("valor-por-cabeca").innerHTML = total;
+  //   }
+    
+  //   document.getElementById("calcular").onclick = function(){
+  //       calculateDinner();
+  //   }</script>
+
+    
+</body>
+</html>

@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ex03 CHAT GPT</title>
+    <link rel="stylesheet" href="../style.css">
+  <style>
+    .container {
+      max-width: 400px;
+      margin: 0 auto;
+      padding: 20px;
+      text-align: center;
+    }
+
+    input[type="text"] {
+      width: 100%;
+      padding: 10px;
+      margin-bottom: 10px;
+    }
+
+    button {
+      padding: 10px 20px;
+      background-color: #4CAF50;
+      color: #fff;
+      border: none;
+      cursor: pointer;
+    }
+
+    #results {
+      text-align: left;
+      margin-top: 20px;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <h1>Calculadora de Divisão de Conta</h1>
+    <label for="total">Total da Conta:</label>
+    <input type="text" id="total" placeholder="Informe o valor total da conta">
+
+    <div id="customers">
+      <div class="customer">
+        <h3>Cliente 1</h3>
+        <label for="customer1">Valor Consumido:</label>
+        <input type="text" id="customer1" placeholder="Informe o valor consumido pelo cliente">
+      </div>
+    </div>
+
+    <button onclick="addCustomer()">Adicionar Cliente</button>
+    <button onclick="calculate()">Calcular</button>
+
+    <div id="results"></div>
+  </div>
+
+  <script>
+    let customerCount = 1;
+
+    function addCustomer() {
+      customerCount++;
+
+      const customersContainer = document.getElementById('customers');
+
+      const newCustomer = document.createElement('div');
+      newCustomer.className = 'customer';
+
+      const customerTitle = document.createElement('h3');
+      customerTitle.textContent = 'Cliente ' + customerCount;
+
+      const customerValueLabel = document.createElement('label');
+      customerValueLabel.textContent = 'Valor Consumido:';
+
+      const customerValueInput = document.createElement('input');
+      customerValueInput.type = 'text';
+      customerValueInput.id = 'customer' + customerCount;
+      customerValueInput.placeholder = 'Informe o valor consumido pelo cliente';
+
+      newCustomer.appendChild(customerTitle);
+      newCustomer.appendChild(customerValueLabel);
+      newCustomer.appendChild(customerValueInput);
+
+      customersContainer.appendChild(newCustomer);
+    }
+
+    function calculate() {
+      const total = parseFloat(document.getElementById('total').value);
+
+      const resultsContainer = document.getElementById('results');
+      resultsContainer.innerHTML = '';
+
+      let grandTotal = 0;
+
+      for (let i = 1; i <= customerCount; i++) {
+        const customerValue = parseFloat(document.getElementById('customer' + i).value);
+
+        const customerTotal = customerValue + (customerValue * 0.1);
+        grandTotal += customerTotal;
+
+        const customerResult = document.createElement('p');
+        customerResult.textContent = 'Cliente ' + i + ': R$' + customerTotal.toFixed(2);
+
+        resultsContainer.appendChild(customerResult);
+      }
+
+      const grandTotalResult = document.createElement('p');
+      grandTotalResult.textContent = 'Total Geral: R$' + grandTotal.toFixed(2);
+
+      resultsContainer.appendChild(grandTotalResult);
+    }
+  </script>
+</body>
+</html>
