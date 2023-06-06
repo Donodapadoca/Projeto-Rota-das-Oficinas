@@ -1,11 +1,12 @@
 body {
-    font-family: Roboto;
+    font-family: Georgia, 'Times New Roman', Times, serif;
     background-image: linear-gradient(to left,#729599,#BCC5CE,#E6DFD9,#BFB3A8,#7A7067);
     color:#2c2825
 
     }
 
     #topo{
+          font-family: Roboto;
           background: #7A7067;
           height: auto;
           width: 360px;
@@ -18,7 +19,7 @@ body {
           color: black;
       }
     #calc{
-        height: 200px;
+        height: auto;
         width: 360px;
         margin: 3% auto;
         padding: 0 0 2% 0;
@@ -87,10 +88,12 @@ body {
       display: block;
       margin-top: 10px;
       text-align: center;
+      font-style: bold;
     }
 
     input{
         margin: 0%;
+        
         
     }
 

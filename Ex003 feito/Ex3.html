@@ -24,8 +24,8 @@
     <input type="text" id="clientsInput">
     <label>Produtos (separados por vírgula):</label>
     <input type="text" id="productsInput">
-    <!-- <label> Quantos clientes vão pagar a taxa</label>
-    <input type="number" id="taxaInput"> -->
+    <label> Clientes que vão pagar a taxa de serviço<br>(separados por virgula) </label>
+    <input type="text" id="taxaInput">
 
     <button onclick="calculate()">Calcular</button>
   </div>
@@ -36,10 +36,11 @@
     function calculate() {
       var clientsInput = document.getElementById('clientsInput').value;
       var productsInput = document.getElementById('productsInput').value;
-      // const taxaInput = document.getElementById('taxapc').value
+      const taxaInput = document.getElementById('taxaInput').value
       //separa os clientes e os produtos por uma virgula
       var clients = clientsInput.split(',');
       var products = productsInput.split(',');
+      var taxaClients = taxaInput.split('');
 
       var results = {};
 
@@ -52,7 +53,6 @@
         var price = parseFloat(prompt('Digite o valor para o produto ' + product + ':'));
         var consumedBy = prompt('Digite os clientes que consumiram ' + product + ' (separados por vírgula):');
 
-
         var consumers = consumedBy.split(',');
         var pricePerConsumer = price;
 
@@ -60,27 +60,17 @@
         consumers.forEach(function (consumer) {
           results[consumer] += pricePerConsumer;
         });
-        var taxabb = prompt('Digite os clientes que vão pagar a taxa de serviço (separados por virgula)')
-
-        var consumerstx = taxabb.split(',');
-
-
-
-        consumetaxa.forEach(function (consumerstx) {
-          results[consumer] += pricePerConsumer * 0.10;
-
-        });
-
 
 
 
 
       });
 
-
-
-
-
+      taxaClients.forEach(function(taxaClient){
+                 var shouldPayTaxa = clients.includes(taxaClient); 
+                         if (shouldPayTaxa) {           
+                          results[taxaClient] += results[taxaClient] * 0.1;
+                                 }       });
 
       // cria as tabelas 
       var table = document.createElement('table');
