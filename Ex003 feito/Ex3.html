@@ -65,7 +65,7 @@
 
 
       });
-
+      // função que calcula para os clientes que escolheram pagar a taxa, independente do produto ou da taxa
       taxaClients.forEach(function(taxaClient){
                  var shouldPayTaxa = clients.includes(taxaClient); 
                          if (shouldPayTaxa) {           
@@ -96,7 +96,7 @@
 
         td1.appendChild(document.createTextNode(client));
 
-        // exprime na tela o valor que cada cliente pagou
+        // exprime na tela o valor que cada cliente pagou incluindo a taxa de 10% ou não
         var total = results[client];
 
         // cira uma anotação de texto em formato de tabela e exibe para o usuario
