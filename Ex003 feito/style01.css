@@ -29,11 +29,11 @@ body {
         -moz-border-radius: 20px;
       }
       #results{
-    background-color: #3d3834;
+    background-image:(to left top,#7A7067,#729599);
     height: auto;
     width: 360px;
     margin: 3% auto;
-    color: white;
+    color:black;
     border-top-left-radius: 20px;
     border-top-right-radius: 20px;
     
