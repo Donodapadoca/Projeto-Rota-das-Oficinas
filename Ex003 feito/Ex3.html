@@ -28,7 +28,9 @@
     <input type="text" id="taxaInput">
 
     <button onclick="calculate()">Calcular</button>
+    <a href="../INDEX.HTML">Retornar a pagina incial</a>
   </div>
+  
 
   <div id="results"></div>
 
@@ -89,6 +91,7 @@
 
       var tbody = document.createElement('tbody');
 
+      //cria a tabela de valores que será mostrada ao final do programa
       for (var client in results) {
         var row = document.createElement('tr');
         var td1 = document.createElement('td');
@@ -99,7 +102,7 @@
         // exprime na tela o valor que cada cliente pagou incluindo a taxa de 10% ou não
         var total = results[client];
 
-        // cira uma anotação de texto em formato de tabela e exibe para o usuario
+        // cira uma anotação de texto em formato de tabela e exibe o valor final que ele deverá pagar
         td2.appendChild(document.createTextNode('R$ ' + total.toFixed(2)));
 
         row.appendChild(td1);
@@ -109,9 +112,9 @@
 
       table.appendChild(tbody);
 
-      var resultsDiv = document.getElementById('results');
-      resultsDiv.innerHTML = '';
-      resultsDiv.appendChild(table);
+        var resultsDiv = document.getElementById('results');
+        resultsDiv.innerHTML = '';
+        resultsDiv.appendChild(table);
     }
   </script>
 </body>
