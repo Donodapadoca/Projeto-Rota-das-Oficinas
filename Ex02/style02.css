@@ -29,27 +29,26 @@ span {
     color: #222;
 }
 
-.color:hover {
-
-    background: #53a7ea;
-
-}
 
 button {
     padding: .75em;
     border-radius: 5px;
     border: none;
-    background: linear-gradient(to bottom right,
-            white, #2f3f30);
+    background: #4e6769;
+            
     cursor: pointer;
 }
 
 button:hover {
-    background-image: linear-gradient(to bottom left,
-            white, #2f3f30);
+    background:#729599;
     cursor: pointer;
-    transition: all 1.0s ease-in-out;
+    transition: all 0.30s ease-in-out;
 
+}
+
+a{
+    color: black;
+    
 }
 
 
