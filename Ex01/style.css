@@ -5,17 +5,20 @@
 body{
     background-image: linear-gradient(to left,#729599,#BCC5CE,#E6DFD9,#BFB3A8,#7A7067);
     color:#2c2825 ;
+    align-items: center;
     
 }
 
 input{
+    width: 20%;
+    color: black;
+    background-color: #f7f7f7;
+    font-size: 14px;
     text-align: center;
     font-size: medium;
     font-family: 'Times New Roman', Times, serif;
+    border-radius: 5px;
 }
 
-
-
-div{
-    padding: 5px;
+a{padding-left: 10%;
 }

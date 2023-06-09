@@ -5,56 +5,9 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Game of Life JP</title>
-    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="style02.css">
 
-    <style>
-        body {
-    padding: 20px;
-    background-color: #444;
-}
 
-#gridContainer {
-    padding-bottom: 10px;
-}
-
-table {
-    background-color: #C5D6C6;
-    border-spacing: 0;
-}
-
-td {
-    border: 1px solid #F1F5DA;
-    border-radius: 3px;
-    width: 10px;
-    height: 10px;
-}
-
-span {
-    color: #222;
-}
-
-#start,
-#clear,
-#random {
-    
-    padding: .75em;
-    border-radius: 5px;
-    border: none;    
-    background: linear-gradient(
-        to bottom right,
-        #647065, #2f3f30);
-        
-    }
-
-td.dead {
-    background-color: transparent;
-}
-
-td.live {
-    background-color: black;
-    border-radius: 10px;
-}
-    </style>
 </head>
 
    
@@ -64,9 +17,9 @@ td.live {
     </div>
     <!-- Botões do jogo -->
     <div class="controls">
-    <button id="start"><span>Começar</span></button>
-    <button id="clear"><span>Limpar</span></button>
-    <button id="random"><span>Random</span></button>
+    <button class="glow-on-houver"  type="button" id="start"><span>Começar</span></button>
+    <button class="glow-on-houver"  type="button" id="clear"><span>Limpar</span></button>
+    <button class="glow-on-houvery" type="button" id="random"  ><span>Random</span></button>
     </div>
         
     <script>
