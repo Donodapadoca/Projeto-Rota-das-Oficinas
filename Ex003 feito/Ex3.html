@@ -28,9 +28,11 @@
     <input type="text" id="taxaInput">
 
     <button onclick="calculate()">Calcular</button>
+
+    <br>
     <a href="../INDEX.HTML">Retornar a pagina incial</a>
   </div>
-  
+
 
   <div id="results"></div>
 
@@ -68,11 +70,12 @@
 
       });
       // função que calcula para os clientes que escolheram pagar a taxa, independente do produto ou da taxa
-      taxaClients.forEach(function(taxaClient){
-                 var shouldPayTaxa = clients.includes(taxaClient); 
-                         if (shouldPayTaxa) {           
-                          results[taxaClient] += results[taxaClient] * 0.1;
-                                 }       });
+      taxaClients.forEach(function (taxaClient) {
+        var shouldPayTaxa = clients.includes(taxaClient);
+        if (shouldPayTaxa) {
+          results[taxaClient] += results[taxaClient] * 0.1;
+        }
+      });
 
       // cria as tabelas 
       var table = document.createElement('table');
@@ -112,9 +115,9 @@
 
       table.appendChild(tbody);
 
-        var resultsDiv = document.getElementById('results');
-        resultsDiv.innerHTML = '';
-        resultsDiv.appendChild(table);
+      var resultsDiv = document.getElementById('results');
+      resultsDiv.innerHTML = '';
+      resultsDiv.appendChild(table);
     }
   </script>
 </body>

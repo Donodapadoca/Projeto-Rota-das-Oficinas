@@ -1,112 +1,129 @@
 body {
-    font-family: Georgia, 'Times New Roman', Times, serif;
-    background-image: linear-gradient(to left,#729599,#BCC5CE,#E6DFD9,#BFB3A8,#7A7067);
-    color:#2c2825
+  font-family: 'Times New Roman', Times, serif;
+  background-image: linear-gradient(to left, #729599, #BCC5CE, #E6DFD9, #BFB3A8, #7A7067);
+  color: #2c2825;
+  align-items: center;
 
-    }
+}
 
-    #topo{
-          font-family: Roboto;
-          background: #7A7067;
-          height: auto;
-          width: 360px;
-          margin: 3% auto;
-          margin-bottom: 0% auto;
-          padding:0px;
-          border-top-left-radius: 20px;
-          border-top-right-radius: 20px;
-          text-align: center;
-          color: black;
-      }
-    #calc{
-        height: auto;
-        width: 360px;
-        margin: 3% auto;
-        padding: 0 0 2% 0;
-        background-image: linear-gradient(to left bottom,#729599,#BCC5CE,#E6DFD9,#BFB3A8,#7A7067);
-        box-shadow: 0 0 3px rgba(0, 0, 0, 0.1);
-        border-radius: 20px;
-        -webkit-border-radius: 20px;
-        -moz-border-radius: 20px;
-      }
-      #results{
-    background-image:(to left top,#7A7067,#729599);
-    height: auto;
-    width: 360px;
-    margin: 3% auto;
-    color:black;
-    border-top-left-radius: 20px;
-    border-top-right-radius: 20px;
-    
-      }
-      
+#topo {
+  font-family: Roboto;
+  background: #7A7067;
+  height: auto;
+  width: 360px;
+  margin: 3% auto;
+  margin-bottom: 0% auto;
+  padding: 0px;
+  border-top-left-radius: 20px;
+  border-top-right-radius: 20px;
+  text-align: center;
+  color: black;
+}
 
-      a{
-        padding: 26%;
-      }
+#calc {
+  height: auto;
+  width: 360px;
+  margin: 3% auto;
+  padding: 0 0 2% 0;
+  background-image: linear-gradient(to left bottom, #729599, #BCC5CE, #E6DFD9, #BFB3A8, #7A7067);
+  box-shadow: 0 0 3px rgba(0, 0, 0, 0.1);
+  border-radius: 20px;
+  -webkit-border-radius: 20px;
+  -moz-border-radius: 20px;
+}
 
-      
-      button {
-        text-transform: uppercase;
-        font-weight: bold;
-        display: block;
-        margin: 10px auto;
-        background: #e9dbce;
-        border-radius: 5px;
-        width: 200px;
-        height: auto;
-        font-size: 17px;
-        color: black;
-        cursor: pointer;
-      }
+#results {
+  background-image: (to left top, #7A7067, #729599);
+  height: auto;
+  width: 360px;
+  margin: 3% auto;
+  color: black;
+  border-top-left-radius: 20px;
+  border-top-right-radius: 20px;
+
+}
 
 
-    label {
-      display: block;
-      margin-top: 10px;
-      text-align: center;
-      font-style: bold;
-    }
+a {
+  padding: 0px;
+  text-align: center;
+  margin-left: 100px;
+  color: black;
+}
 
-    input{
-       
-        border-radius: 5px;
-        width: 60%;
-        padding: 5px 5px 8px 8px;
-        margin-left: 70px;
-        color:black;
-        background-color: #f7f7f7;
-        font-size: 14px;
-        
-        
-    }
+a:hover {}
 
-    input[type="text"] {
-      width: 200px;
-      
-    }
 
-    button {
-      margin-top: 10px;
-    }
+button {
+  text-transform: uppercase;
+  font-weight: bold;
+  display: block;
+  margin: 10px auto;
+  background: #e9dbce;
+  border-radius: 5px;
+  width: 200px;
+  height: auto;
+  font-size: 17px;
+  color: black;
+  cursor: pointer;
+  font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+}
 
-    #results {
-      margin-top: 20px;
-    }
+button:hover {
+  background-color: #7A7067;
+  transition: all 1.0s ease-in;
 
-    #results table {
-      border-collapse: collapse;
-      width: 300px;
-    }
 
-    #results th, #results td {
-      padding: 5px;
-      text-align: left;
-    }
+}
 
-    #results th {
-      background-color: #3d3834;
-      color: white;
-      border-top-left-radius: 20px;
-      border-top-right-radius: 20px;
-    }
+
+label {
+  display: block;
+  margin-top: 10px;
+  text-align: center;
+  font-style: bold;
+}
+
+input {
+
+  border-radius: 5px;
+  width: 60%;
+  padding: 5px 5px 8px 8px;
+  margin-left: 70px;
+  color: black;
+  background-color: #f7f7f7;
+  font-size: 14px;
+
+
+}
+
+input[type="text"] {
+  width: 200px;
+
+}
+
+button {
+  margin-top: 10px;
+}
+
+#results {
+  margin-top: 20px;
+}
+
+#results table {
+  border-collapse: collapse;
+  width: 300px;
+}
+
+#results th,
+#results td {
+  padding: 5px;
+  text-align: left;
+}
+
+#results th {
+  background-color: #3d3834;
+  color: white;
+  border-top-left-radius: 20px;
+  border-top-right-radius: 20px;
+}
